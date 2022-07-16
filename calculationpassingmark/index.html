@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Passing Mark</title>
+</head>
+<body>
+    <input type="number" id="studentmark">
+    <div id="situation"></div>
+    <script>
+    var studentMark=document.getElementById("studentmark");
+    studentMark.onchange=markCalculate;
+    
+    function markCalculate(){
+        var _studentMark = Number(studentMark.value);
+        var situation=document.getElementById("situation");
+        if(_studentMark<0){
+            situation.innerHTML="WRONG MARK ENTERED.";
+
+        } else if(_studentMark<50){
+            situation.innerHTML="YOU FAILED IN THIS LESSON.";
+
+        } else if(_studentMark<60){
+            situation.innerHTML="YOU PASSED IN THIS LESSON.";
+            
+        } else if(_studentMark<70){
+            situation.innerHTML="PASSING GRADE.";
+        
+        } else if(_studentMark<85){
+            situation.innerHTML="GOOD.";
+
+        } else if (_studentMark<=100){
+            situation.innerHTML="VERY GOOD.";
+        
+        } else{
+            situation.innerHTML= "WRONG MARK ENTERED.";
+        }
+        
+    }
+
+    </script>
+</body>
+</html>
